@@ -1,0 +1,55 @@
+<navbar innerText="{{title}}" isShowBack="{{navType}}" isShowSearch="{{searchType}}">
+</navbar>
+<view class='page'>
+  <view class='step'>
+    <view class='line'></view>
+    <view class='lines' style='width:{{stepline}}%'></view>
+    <block wx:for="{{stepList}}" wx:key="index">
+      <view class="li {{item.active?'active':''}}">
+        <view class='time' wx:if="{{step == index+1}}">
+          <text style='color:red'>{{countDownNum}}</text>
+        </view>
+        <view class='time' wx:else></view>
+        <view class='ok' wx:if="{{step != index+1 && step != index}}">
+          <i-icon type="right" color="#245098" />
+        </view>
+        <view class='circle'></view>
+        <text>{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+  <view class='order'>
+    <view class='title'>申请挂起</view>
+    <view class='li'>
+      <span>申请挂起时间</span>
+      <text>2019-4-2 20:02</text>
+    </view>
+    <view class='li'>
+      <span>挂起理由</span>
+      <view class='dtls'>摄像头的设备完好，但不知道哪里出来问题，就是连不上网络，排除不出哪个端口换了，申请多一点的时间维修，烦请领导批准</view>
+    </view>
+  </view>
+  <view class='opinion'>
+      <view class="box {{active?'active':''}}" bindtap='handle'>
+        <view class='box-icon'>
+          <image src='../images/icon17.png'></image>
+        </view>
+        <view class='box-txt'>
+          通过
+        </view>
+      </view>
+      <view class="box {{active?'':'actives'}}" bindtap='handle'>
+        <view class='box-icon'>
+          <image src='../images/icon18.png'></image>
+        </view>
+        <view class='box-txt'>
+          不通过
+        </view>
+      </view>
+  </view>
+  <textarea class='nopass' wx:if="{{!active}}" placeholder='请填写不通过的理由'></textarea>
+</view>
+
+<view class='getOrder'>
+  提交
+</view>

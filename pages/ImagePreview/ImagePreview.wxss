@@ -1,0 +1,36 @@
+/* pages/ImagePreview/ImagePreview.wxss */
+
+page {
+  background: #1e2021;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 140rpx);
+}
+
+.slide-image {
+  display: inline-block;
+  width: 100%;
+}
+
+swiper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+swiper image{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.del {
+  position: absolute;
+  width: 100%;text-align: center;
+  padding: 20rpx 0px;
+  bottom: 0px;
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,143 @@
+/* pages/toRepair/toRepair.wxss */
+page{
+  background: #f0f2f5
+}
+.form {
+  margin: 35rpx 25rpx;
+}
+
+.form .item {
+  background: #fff;
+  margin-bottom: 30rpx;
+  padding: 20rpx;
+  position: relative;
+  border-radius: 5rpx;
+  overflow: hidden;
+}
+
+.form .item .title {
+  color: #494b4c;
+  font-size: 30rpx;
+  display: block;
+  height: 52rpx;
+  line-height: 58rpx;
+  float: left;
+  width: 100%;
+}
+.form .item label {
+  color: #494b4c;
+  font-size: 30rpx;
+  display: inline-block;
+  height: 52rpx;
+  line-height: 58rpx;
+}
+.form .item .nochose {
+  color: #b2b2b2;
+}
+
+.form .item picker {
+  display: block;
+  width: 70%;
+  float: right;
+  text-align: right;
+  font-size: 30rpx;
+  height: 52rpx;
+  line-height: 52rpx;
+  padding-right: 60rpx;
+}
+.toRepair{
+  margin-top: 20rpx;
+  width: 100%;float: left
+}
+.toRepair-box{
+  border: 1px solid #e1e3e5;
+  overflow: hidden
+}
+.form .item textarea {
+  width: 100%;
+  float: left;
+  height: 200rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.form .item input{
+  display: inline-block;
+  float: right;
+  vertical-align: middle;text-align: right;
+  padding-right: 50rpx;
+}
+.form .item .inputnote {
+  width: 100%;
+  float: left;
+  text-align: right;
+  color: #757980;
+  font-size: 28rpx;
+  padding: 20rpx 0rpx 30rpx 0rpx;
+}
+
+.form .item>image {
+  position: absolute;
+  right: 30rpx;
+  top: 34rpx;
+  width: 16rpx;
+  height: 25rpx;
+}
+
+.form .item .files {
+  width: 100%;
+  float: left;
+  padding: 30rpx 0rpx;
+  position: relative;margin-left: 24rpx;
+}
+
+.form .item .files .add {
+  display: block;
+  background: #f0f2f5;
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 8rpx;
+  line-height: 112rpx;
+  text-align: center;
+  margin-top: 20rpx;float: left
+}
+.form .item .files .add image{
+  width: 46rpx;height: 36rpx;display: inline-block;vertical-align: middle
+}
+.form .item .files>image {
+  display: block;
+  width: 112rpx;
+  height: 112rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  border-radius: 8rpx;
+  float: left
+}
+.tel {
+  border-radius: 5rpx;
+  background: #fff;
+  font-size: 30rpx;
+  padding: 20rpx;
+  display: flex;
+}
+
+.tel text {
+  width: 230rpx;
+  line-height: 59rpx;
+}
+
+.tel input {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+.getOrder {
+  display: block;
+  background: #245098;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  padding: 30rpx 0rpx;
+  margin: 60rpx  24rpx 24rpx 24rpx;
+  border-radius: 10rpx;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "navbar": "/pages/navbar/navbar",
+    "i-count-down": "../../dist/count-down/index",
+    "i-icon": "../../dist/icon/index"
+  }
+}

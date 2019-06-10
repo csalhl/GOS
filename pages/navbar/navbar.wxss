@@ -1,0 +1,77 @@
+.nav {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.nav-title {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  font-size: 34rpx;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.nav-search {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-search i-icon {
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  position: absolute;
+  left: 18px;
+  top: 8px;
+  z-index: 2;
+}
+
+.nav-search input {
+  width: 55%;
+  position: absolute;
+  border-radius: 8rpx;
+  top: 10rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  left: 20rpx;
+  text-align: left;
+  padding-left: 70rpx;
+  font-size: 26rpx;
+  background: #f0f2f5;
+}
+
+.nav .back {
+  width: 32rpx;
+  height: 46rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 15px;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.bg-gray {
+  background-color: #f7f7f7;
+}
+
+.overflow {
+  overflow: auto;
+}
+
+.hidden {
+  overflow: hidden;
+}

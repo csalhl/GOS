@@ -1,0 +1,58 @@
+<!--pages/waitingorder/waitingorder.wxml-->
+<navbar innerText="{{title}}" isShowBack="{{navType}}" isShowSearch="{{searchType}}"></navbar>
+<view class='page'>
+  <view class='step'>
+    <view class='line'></view>
+    <view class='lines' style='width:{{stepline}}%'></view>
+    <block wx:for="{{stepList}}" wx:key="index">
+      <view class="li {{item.active?'active':''}}">
+        <view class='time' wx:if="{{step == index+1}}">
+          <text style='color:red'>{{countDownNum}}</text>
+          <view class='txt'>后超时</view>
+        </view>
+        <view class='time' wx:else></view>
+        <view class='ok' wx:if="{{step == index+2}}">
+          <i-icon type="right" color="#245098" />
+        </view>
+        <view class='circle'></view>
+        <text>{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+  <view class='onsite'>
+    <view class='title'>请拍摄故障现场照片并上传</view>
+    <view class='files'>
+      <block wx:for="{{imagesList}}" wx:key="index" wx:for-item="image">
+        <image src='{{image}}' data-idx="{{index}}" wx:if="imageList.length < 0" bindtap="handleImagePreview"></image>
+      </block>
+      <view class='add' bindtap="showAction">
+        <image src='../images/icon15.png'></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='getOrder' bindtap='Submits'>
+  提 交
+</view>
+
+
+<van-popup show="{{ shows }}" bind:close="onClose" position="bottom">
+  <view class='actionList'>
+    <view class='li' bindtap='uploader'>
+      <image src='../images/icon48.png'></image>
+      <text>选择照片文件</text>
+    </view>
+    <view class='li' bindtap='uploadVideo'>
+      <image src='../images/icon49.png'></image>
+      <view class='txt'>选择视频文件<span>（时长不超过20s）</span></view>
+    </view>
+    <view class='li' bindtap="takePhoto">
+      <image src='../images/icon50.png'></image>
+      <text>拍摄</text>
+    </view>
+    <view class='li' bindtap='hide'>
+      <image src='../images/icon51.png'></image>
+      <text>取消</text>
+    </view>
+  </view>
+</van-popup>

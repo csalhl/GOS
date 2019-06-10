@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "i-tabs": "../../dist/tabs/index",
+    "navbar": "/pages/navbar/navbar",
+    "i-tab": "../../dist/tab/index",
+    "i-input": "../../dist/input/index",
+    "i-button": "../../dist/button/index"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "i-tabs": "../../dist/tabs/index",
+    "navbar": "/pages/navbar/navbar",
+    "i-tab": "../../dist/tab/index",
+    "van-tab": "../../vant/tab/index",
+    "van-tabs": "../../vant/tabs/index"
+  }
+}

@@ -1,0 +1,84 @@
+/* pages/notice/notice.wxss */
+
+page {
+  background: #f0f2f5;
+}
+
+.notice .title {
+  text-align: right;
+  padding: 30rpx;
+}
+
+.notice .title image {
+  width: 36rpx;
+  height: 36rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8rpx;
+}
+
+.notice .li {
+  margin: 0rpx 24rpx 24rpx 24rpx;
+  background: #fff;
+  border-radius: 4rpx;
+  padding: 30rpx;position: relative
+}
+.notice .li .read{
+  width: 14rpx;height: 14rpx;background: #f76260;border-radius: 50%;position: absolute;top: 15rpx;right: 15rpx;
+}
+.notice .li .top {
+  margin-bottom: 16rpx;
+  overflow: hidden;
+}
+
+.notice .li .top .top-left {
+  float: left;
+  font-size: 26rpx;
+}
+
+.notice .li .top .top-left text {
+  font-size: 32rpx;
+  color: #245098;
+}
+
+.notice .li .top .top-right {
+  float: right;
+  font-size: 24rpx;
+  color: #757980;
+  margin-top: 10rpx;
+}
+
+.notice .li .content {
+  font-size: 28rpx;
+  color: #1e2021;
+}
+
+.notice .title text {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.ordering {
+  text-align: center;
+  position: relative;
+}
+
+.ordering image {
+  display: inline-block;width:410rpx;height: 280rpx;
+  margin-bottom: 40rpx;
+  margin-top: 160rpx;
+}
+
+.ordering text {
+  display: block;
+  font-size: 30rpx;
+  letter-spacing: 4rpx;
+}
+
+.li-bottom {
+  padding-bottom: 60rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #757980;
+  margin-top: 32rpx;
+}

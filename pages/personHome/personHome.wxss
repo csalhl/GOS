@@ -1,0 +1,6 @@
+/* pages/home/home.wxss */
+.bar{position: fixed;bottom: 0px;width: 100%;display: flex;border-top:1px solid #e5e5e5;padding: 16rpx 0rpx;background: #fff }
+.bar-box{text-align: center;width: 100%;}
+.bar-box image{width: 42rpx;height:42rpx;display: block;margin: auto}
+.bar-box text{display:block;font-size: 24rpx;color: #5e6166;margin-top: 5rpx}
+.bar-active text{color: #245098}

@@ -1,0 +1,32 @@
+<navbar innerText="{{title}}" isShowBack="{{navType}}">
+</navbar>
+<view class="page" style='padding-bottom:110rpx'>
+  <view class='repair'>
+    <navigator url="/pages/toRepair/toRepair" open-type="navigate" hover-class="none">我要报修</navigator>
+  </view>
+  <view class='ordering' wx:if="{{allList.length == 0}}">
+    <image src='../images/icon32.png'></image>
+    <text>这里空空如也，马上去报修</text>
+    <navigator url="/pages/toRepair/toRepair" open-type="navigate" hover-class="none">报修</navigator>
+  </view>
+  <block wx:for="{{allList}}" wx:key="index" wx:if="{{current == current}}">
+    <view class='worder' data-id='{{item.status}}' bindtap='goDetail'>
+      <view class='title'>
+        <view class='worker-id'>
+          <image src='../images/icon12.png'></image>{{item.id}}</view>
+        <view class='type'>{{item.level}}</view>
+        <span class="fr" wx:if="{{item.status == 0}}">已报修</span>
+        <span class="fr" wx:if="{{item.status == 1}}">已接单</span>
+        <span class="fr" wx:if="{{item.status == 2}}">现场维修</span>
+        <span class="fr" wx:if="{{item.status == 3}}">已完成</span>
+      </view>
+      <view class='content'>
+        {{item.detail}}
+      </view>
+      <view class='info'>
+        <view class="info-time">{{item.date}}</view>
+        <view class='read'></view>
+      </view>
+    </view>
+  </block>
+</view>

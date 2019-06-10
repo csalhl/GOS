@@ -1,0 +1,69 @@
+/* pages/selectDevice/selectDevice.wxss */
+
+page {
+  background: #f0f2f5;
+}
+
+.parent-title {
+  padding-left: 50rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAADsElEQVRYhcWYWYgUVxSGv5mJZiaikcQtBDGSuCXgk0tQlIAbWpZBCRG0HERIlDAIbkh8GNz1xQUi+OKCWj7EB1HLEkHHEHFhFMFlREFBVGZQxOj4YAhRO5z2lF7K7jtVtwn+0FT36XtO/133v/89t6oKhQJ54PmBjB4MTAO6AS+M9BrgOXAEuF6qbByF1l/7IBeb1xgOnAU6WcasB4YBl/IWr3YgNK8DMgkWONR2IvRRxnFfOdR2IvRNxnGDHWpTUtSeH3wLPI2j8KYR+wRYDKyQvIz1twAbgEdGbCDwKXAhjsKXVkKeH4g2LgNfa+g0sBroDuwGuub6u6/xN/Az0Ar8CkzQ+F3gyzSp9CpbZ5ARjAVOOpAwUQfsKxHvB+wE5prBN3fI8wPRRkuFP+6CoXEUXkvyTFFvew9kBLvMD0VCnh+MA75zLChaaAZuZhhbCsM8P5iUxKumTJ0tpG4D/XMUaQdWAqeAq0Z8ADBGnbp3jnoPxCbiKGwXMr/kJHNRhb81RUZwS6dgENCUo2YfYD66yl50PP4NRHyjgX81MBkYD/QCHiuJSO/geJ3KERlrF5d/cZV5fnAQmJ4haYBOL2oRK0qM2aIGKugL3NEuwAaxlu/jKHxeFHUchTOANcArS9LhOAoTMsvKkBEsAhr1/X1gTwdkNsdROEHIYC77OAobtVg57Nd4nQrahlVAT/2+2TJuZRyFS8xAenN9YEn+S6+jM+74I/V6zzLmUTqQJlRrSU42vboMZASd9Woj/0U6kN7LbP1sN72eU62l/8xR1cszJXNG483a7qb1WVPCNt4S8vygXr2lHDzgkC5v2WYWGuMuAH6ZvFZ9FdFRT50s+0YVog0F7WOe6NQeMEjsAH7S9zOlrTC8KguS/uqYbB0/Ar9nTGxSw0sgR5B67ZvW6jS+03TlwC4pMCRHwjjtYRLI/Z+oZFBdtFdA6B8h9BvwMEeSnDr+BGaV+E7uzscVEKpJNDQH2OtQQDzmvJpmpLEhulnaXL8cWsyO8Xqqfc2D/aonwWdAFwctyXS3mT7UoP2NCxKHFwm0OdYQbDf3sj90KVeC6gpFXZV224bU5ye6q9sM00ShQlHXvnNQ9PxATO0H7ZFPJG2B5wejgI3aoqaxCViqsYnasLngnMvjmBsljskmISv+j8cxVyzn9mq1gs/LJevzpXJY7/Kw4ZnlO6nXw6Fmgl4uhKT/TkO8RyDz/2EFhOpcpuw4ID24iFweTshOnRx5xAyX65Tldeoq4Mh/dc3tgMNDI1wAAAAASUVORK5CYII=) no-repeat center left;
+  background-size: 36rpx 36rpx;
+}
+.van-collapse-item__content {
+  padding: 0 !important;
+}
+.van-collapse-item{margin-top: 24rpx}
+.ul{
+  overflow: hidden
+}
+.ul .li{
+  display: block;
+  padding: 25rpx 35rpx;
+}
+.ul .li text {
+  font-size: 28rpx;
+  color: #1e2021;
+}
+.ul .li .check {
+  display: inline-block;
+  float: right;
+  box-sizing: border-box;
+  width: 40rpx;
+  height: 40rpx;
+  color: transparent;
+  font-size: 32rpx;
+  border-radius: 50%;
+  line-height: inherit;
+  text-align: center;
+  border: 1rpx solid #e5e5e5;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  vertical-align: middle
+}
+.ul .li .checked{
+  border-color: #5cb234;background: #5cb234;
+}
+.getOrder {
+  color: #fff;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+}
+
+.getOrder-btn {
+  background: #245098;
+  font-size: 30rpx;
+  text-align: center;
+  padding: 30rpx 0rpx;
+  flex: auto;
+}
+
+.getOrder .notes {
+  width: 50%;
+  background: #fff;
+  text-align: center;
+  color: #1e2021;
+  padding: 30rpx 0rpx;
+}

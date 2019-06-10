@@ -1,0 +1,26 @@
+<!--pages/MonthlyStatistics/MonthlyStatistics.wxml-->
+<navbar innerText="{{title}}" isShowBack="{{navType}}" isShowSearch="{{searchType}}"></navbar>
+<view class='page'>
+    <view class='ordering' wx:if="{{list.length == 0}}">
+        <image src='../images/icon21.png'></image>
+        <text>暂无统计数据</text>
+    </view>
+    <view class='statistics'>
+      <view class='title'>2019 年</view>
+      <navigator url="/pages/MonthlyStatisticsDetail/MonthlyStatisticsDetail" hover-class="none">
+      <view class='li' wx:for="{{list}}" wx:key="index">
+        <view class='left'>
+          <view class='month'>
+            <image src='../images/icon24.png'></image>
+            {{item.month}}
+          </view>
+          <text>{{item.month}}</text>月接单数
+        </view>
+        <view class='right'>
+            {{item.num}}
+        </view>
+      </view>
+      </navigator>
+      <view class='li-bottom'>没有更多了~</view>
+    </view>
+</view>

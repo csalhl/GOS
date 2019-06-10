@@ -1,0 +1,174 @@
+.page {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+page {
+  background-color: #f0f2f5;
+}
+
+.bar {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  z-index: 3;
+}
+
+.worder {
+  background: #fff;
+  margin: 25rpx;
+  border-radius: 6rpx;
+  position: relative;
+}
+
+.worder .title {
+  padding: 20rpx;
+  font-size: 24rpx;
+  border-bottom: 1px solid #eee;
+  overflow: hidden;
+}
+
+.worder .title .type {
+  display: inline-block;
+  background: #f0f2f5;
+  font-size: 21rpx;
+  color: #757980;
+  border-radius: 50rpx;
+  padding: 2rpx 16rpx;
+  margin-left: 30rpx;
+}
+
+.worder .worker-id {
+  display: inline-block;
+  float: left;
+  font-size: 28rpx;
+  color: #494b4c;
+}
+
+.worder .worker-id image {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8rpx;
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.worder .title span {
+  color: #245098;float: right
+}
+
+.worder .content {
+  padding: 25rpx 20rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.worder .info {
+  font-size: 26rpx;
+  padding: 10rpx 25rpx 25rpx 25rpx;
+  color: #777;
+}
+
+.worder .info .info-meta {
+  display: inline-block;
+  color: #e6462e;
+}
+
+.worder .info .fr {
+  padding: 0;
+}
+
+.search {
+  display: flex;
+}
+
+.search {
+  padding: 10rpx 20rpx;
+  background: #fff;
+}
+
+.worder .info .timeout {
+  background: #e5492e;
+  color: #fff;
+  text-align: center;
+  padding: 0rpx 15rpx;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+}
+
+.worder .info .timeouts {
+  background: #e5492e;
+  color: #fff;
+  text-align: center;
+  padding: 0rpx 15rpx;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+}
+
+.worder .timeouticon {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+.worder .timeouticon image {
+  width: 74rpx;
+  height: 77rpx;
+}
+
+.worder .info .timeouts image {
+  width: 22rpx;
+  height: 22rpx;
+  display: inline-block;
+  margin-right: 4rpx;
+  vertical-align: middle;
+  margin-top: -5rpx;
+}
+
+.search input {
+  width: 100%;
+  font-size: 26rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  background: #f1f1f1;
+  padding-left: 25rpx;
+  border-radius: 6rpx;
+}
+
+.search i-button {
+  width: 160rpx;
+}
+
+.search button {
+  width: 86%;
+  margin: 0px 10px;
+  font-size: 26rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+}
+
+
+.van-tab--active {
+  color: #245098 !important;
+}
+.van-tabs__line{
+  background-color: #245098 !important
+}
+.ordering {
+  text-align: center;
+  position: relative;
+}
+
+.ordering image {
+  display: inline-block;width:410rpx;height: 280rpx;
+  margin-bottom: 40rpx;
+  margin-top: 160rpx;
+}
+
+.ordering text {
+  display: block;
+  font-size: 30rpx;
+  letter-spacing: 4rpx;
+}

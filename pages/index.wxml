@@ -1,0 +1,21 @@
+<navbar innerText="{{title}}" isShowBack="{{navType}}"  isShowSearch="{{searchType}}">
+</navbar>
+<view class="page">
+  <image class='logo' src="images/logo.png"></image>
+  <text class='logo-txt'>交通易运维</text>
+  <view class='chose'>
+    <text>请选择身份</text>
+    <button open-type='getUserInfo' type='default' bindgetuserinfo="bindGetUserInfo">
+    <view class='chose-img'><image src='images/bx.png'></image></view>
+    我是群众，我要报修
+    </button>
+    <button type='default' bindtap='goLogin'>
+    <view class='chose-img'><image src='images/jj.png'></image></view>
+    我是工作人员
+    </button>
+  </view>
+</view>
+<view class='footer'>
+  <view class='line'></view>
+  <view class='txt'>江苏谷德信息科技有限公司</view>
+</view>

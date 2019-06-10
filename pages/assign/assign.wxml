@@ -1,0 +1,56 @@
+<navbar innerText="{{title}}" isShowBack="{{navType}}" isShowSearch="{{searchType}}"></navbar>
+<view class='page' style='padding-bottom:100rpx;'>
+  <view class='main-person'>
+    <view class='title'>
+      <image src='../images/icon31.png'></image>主服务人员：
+    </view>
+    <view class='mperson'>
+      <view class='mperson-box' wx:if="{{mainPerson.url}}" bindtap='delPerson'>
+        <image src='{{mainPerson.url}}'></image>
+        {{mainPerson.name}}
+      </view>
+      <view class="main-search {{active?'active':''}}">
+        <i-icon type="search" size='20' color='#b2b2b2' />
+        <input type='text' bindinput="bindinput" bindfocus="bindfocus" bindblur="bindblur" placeholder='选择主服务人员'></input>
+      </view>
+    </view>
+    <view class='search-list' wx:if="{{blur}}">
+      <block wx:for="{{searchList}}" wx:key="index">
+        <view class='li' data-name='{{item.name}}' data-url='{{item.url}}' bindtap='choseUser'>
+          <view class='img'>
+            <image src='{{item.url}}'></image>
+          </view>
+          <view class='name'>{{item.name}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class='Secondary'>
+    <view class='title'>
+      添加从服务人员( {{showPerson.length}}/{{searchList.length}})
+    </view>
+    <view class='showPerson'>
+      <block wx:for="{{searchList}}" wx:key="index">
+        <image src='{{item.url}}'  wx:if="{{item.checked}}" data-index='{{index}}' data-id='{{item.id}}' bindtap='delsPerson'></image>
+      </block>
+    </view>
+    <view class='Secondary-list'>
+      <block wx:for="{{searchList}}" wx:key="{{index}}" >
+        <label class="li" data-index='{{index}}' data-id='{{item.id}}' bindtap='checkboxChange'>
+          <view class='img'>
+            <image src='{{item.url}}'></image>
+          </view>
+          <view class='name'>{{item.name}}</view>
+          <view class='selected' wx:if="{{item.checked}}">
+            <i-icon type="right" color='#fff' size='16' />
+          </view>
+          <view class='select' wx:else></view>
+        </label>
+        </block>
+    </view>
+  </view>
+</view>
+<view class='getOrder' bindtap='assign'>
+  确定分派
+</view>

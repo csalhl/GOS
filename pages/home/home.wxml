@@ -1,0 +1,13 @@
+<!--pages/home/home.wxml-->
+<workbench wx:if="{{type == 0}}"></workbench>
+<worklook wx:if="{{type == 1}}"></worklook>
+<user wx:if="{{type == 2}}"></user>
+<view class='bar'>
+  <block wx:for="{{bar}}" wx:key="index">
+  <view class="bar-box {{item.active ?'bar-active':''}}" data-idx='{{index}}' bindtap='titleClick' >
+    <image src='{{item.selectsrc}}' wx:if="{{item.active}}"></image>
+    <image src='{{item.src}}' wx:if="{{!item.active}}"></image>
+    <text>{{item.name}}</text>
+  </view>
+  </block>
+</view>

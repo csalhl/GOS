@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index",
+    "pages/personHome/personHome",
+    "pages/toRepair/toRepair",
+    "pages/worklook/worklook",
+    "pages/waitingCheck/waitingCheck",
+    "pages/selectDevice/selectDevice",
+    "pages/onsite/onsite",
+    "pages/workbench/workbench",
+    "pages/selectUnit/selectUnit",
+    "pages/notice/notice",
+    "pages/noticeDetail/noticeDetail",
+    "pages/policeHome/policeHome",
+    "pages/orderDetail/orderDetail",
+    "pages/completed/completed",
+    "pages/assign/assign",
+    "pages/waitingorder/waitingorder",
+    "pages/orderOver/orderOver",
+    "pages/home/home",
+    "pages/user/user",
+    "pages/Feedback/Feedback",
+    "pages/MonthlyStatistics/MonthlyStatistics",
+    "pages/MonthlyStatisticsDetail/MonthlyStatisticsDetail",
+    "pages/acceptance/acceptance",
+    "pages/setAside/setAside",
+    "pages/apply/apply",
+    "pages/ImagePreview/ImagePreview",
+    "pages/navbar/navbar",
+    "pages/login/login",
+    "pages/doing/doing",
+    "pages/personRepair/personRepair"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "微信小程序",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

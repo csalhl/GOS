@@ -1,0 +1,60 @@
+<!--pages/waitingorder/waitingorder.wxml-->
+<navbar innerText="{{title}}" isShowBack="{{navType}}" isShowSearch="{{searchType}}"></navbar>
+<view class='page' style='padding-bottom:90rpx;'>
+  <view class='step'>
+    <view class='line'></view>
+    <view class='lines' style='width:{{stepline}}%'></view>
+    <block wx:for="{{stepList}}" wx:key="index">
+      <view class="li {{item.active?'active':''}}">
+        <view class='time' wx:if="{{step == index+1 && user}}">
+          <text style='color:red'>{{countDownNum}}</text>
+          <view class='txt'>后超时</view>
+        </view>
+        <view class='time' wx:else></view>
+        <view class='ok' wx:if="{{step != 1}}"><i-icon type="right" color="#245098"/></view>
+        <view class='circle'></view>
+        <text>{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+  <view class='order'>
+    <view class='title'>报修信息</view>
+    <view class='li'>
+      <span>工单编号</span>
+      <text>BX-201904020001</text>
+    </view>
+    <view class='li'>
+      <span>工单优先级</span>
+      <text class='type'>一般</text>
+    </view>
+    <view class='li'>
+      <span>派单人</span>
+      <text>调度员</text>
+    </view>
+    <view class='li'>
+      <span>指定接单人</span>
+      <text>李明</text>
+    </view>
+    <view class='li'>
+      <span>报修时间</span>
+      <text>2019-4-2 20:02</text>
+    </view>
+    <view class='li'>
+      <span>维护单元</span>
+      <text>河西大街与庐山路交叉口</text>
+    </view>
+    <view class='li'>
+      <span>维护单元</span>
+      <view class='dtls'>家庭维修内容包括：水暖检修、电路检修、家具维修及保养、地面维修及保养、墙面检修、洁具检修及保养、门窗检修、家用电器检修、房顶检</view>
+      <image src='../images/timg.png'></image>
+      <image src='../images/timg.png'></image>
+      <image src='../images/timg.png'></image>
+    </view>
+  </view>
+</view>
+<view class='getOrder' wx:if="{{user}}">
+  接 单
+</view>
+<view class='getOrder' wx:else bindtap='assign'>
+  分 派
+</view>

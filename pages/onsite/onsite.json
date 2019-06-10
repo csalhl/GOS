@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "navbar": "/pages/navbar/navbar",
+    "van-popup": "../../vant/popup/index",
+    "i-count-down": "../../dist/count-down/index",
+    "i-icon": "../../dist/icon/index"
+  }
+}

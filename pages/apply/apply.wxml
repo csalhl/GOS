@@ -1,0 +1,33 @@
+<navbar innerText="{{title}}" isShowBack="{{navType}}" isShowSearch="{{searchType}}"></navbar>
+<view class='page'>
+  <view class='step'>
+    <view class='line'></view>
+    <view class='lines' style='width:{{stepline}}%'></view>
+    <block wx:for="{{stepList}}" wx:key="index">
+      <view class="li {{item.active?'active':''}}">
+        <view class='time' wx:if="{{step == index+1}}">
+          <text style='color:red'>{{countDownNum}}</text>
+          <view class='txt'>已超时</view>
+        </view>
+        <view class='time' wx:else></view>
+        <view class='ok' wx:if="{{!item.active}}">
+          <i-icon type="right" color="#245098" />
+        </view>
+        <view class='circle'></view>
+        <text style="color:{{item.active?'':'#222'}}">{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+  <view class='form'>
+    <view class='item'>
+      <label>申请理由</label>
+      <textarea bindinput="bindTextAreaBlur" placeholder="必填，请详细说明理由" />
+      <view class='inputnote' wx:if="{{inputnote>0}}">还可以输入{{inputnote}}字</view>
+      <view class='inputnote' wx:else>字数超出限制</view>
+    </view>
+  </view>
+</view>
+
+<view class='getOrder' bindtap='gonext'>
+  提交
+</view>

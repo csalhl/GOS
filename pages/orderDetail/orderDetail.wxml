@@ -1,0 +1,163 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<navbar innerText="{{title}}" isShowBack="{{navType}}" isShowSearch="{{searchType}}">
+</navbar>
+<view class="page" style='padding-bottom:60rpx;'>
+  <view class='orderDetail'>
+    <block wx:for="{{orderList}}" wx:key="index">
+      <view class='type' wx:if="{{orderType == index}}" bindtap='show'>
+        <image src='{{item.img}}'></image>
+        {{item.name}}
+      </view>
+    </block>
+  </view>
+
+
+
+  <view class='order' wx:if="{{orderType >= 0}}">
+    <view class='title'>报修信息</view>
+    <view class='li'>
+      <span>工单编号</span>
+      <text>BX-201904020001</text>
+    </view>
+    <view class='li'>
+      <span>工单优先级</span>
+      <text>BX-201904020001</text>
+    </view>
+    <view class='li'>
+      <span>派单人</span>
+      <text>调度员</text>
+    </view>
+    <view class='li'>
+      <span>指定接单人</span>
+      <text>李明</text>
+    </view>
+    <view class='li'>
+      <span>报修时间</span>
+      <text>2019-4-2 20:02</text>
+    </view>
+    <view class='li'>
+      <span>维护单元</span>
+      <text>河西大街与庐山路交叉口</text>
+    </view>
+    <view class='li'>
+      <span>维护单元</span>
+      <view class='dtls'>家庭维修内容包括：水暖检修、电路检修、家具维修及保养、地面维修及保养、墙面检修、洁具检修及保养、门窗检修、家用电器检修、房顶检</view>
+      <view class='li-img'>
+        <image src='../images/timg.png'></image>
+        <image src='../images/timg.png'></image>
+        <image src='../images/timg.png'></image>
+      </view>
+    </view>
+  </view>
+
+
+  <view class='order' wx:if="{{orderType >= 1}}">
+    <view class='title'>接单信息</view>
+    <view class='li'>
+      <span>接单人</span>
+      <text>李明</text>
+    </view>
+    <view class='li'>
+      <span>接单时间</span>
+      <text>2019-4-1 10:33</text>
+    </view>
+  </view>
+
+  <view class='order' wx:if="{{orderType >= 2 && orderType != 3}}">
+    <view class='title'>维修信息</view>
+    <view class='ordering'>
+      <image src='../images/icon42.png'></image>
+      <text>工程师正在努力维修...</text>
+    </view>
+  </view>
+
+  <view class='order' wx:if="{{orderType >= 3}}">
+    <view class='title'>提验信息</view>
+    <view class='li'>
+      <span>提验时间</span>
+      <text>2019-4-1 10:33</text>
+    </view>
+    <view class='li'>
+      <span>故障系统</span>
+      <text>电子警察系统</text>
+    </view>
+    <view class='li'>
+      <span>故障设备</span>
+      <text>前端摄像（QDSXJ005）</text>
+    </view>
+    <view class='li'>
+      <span>维修过程描述</span>
+      <view class='dtls'>摄像头的网口接触不良，将网口的芯片修了一下，马上就好了。</view>
+    </view>
+    <view class='li'>
+      <span>维修后照片</span>
+      <view class='li-img'>
+        <image src='../images/timg.png'></image>
+        <image src='../images/timg.png'></image>
+        <image src='../images/timg.png'></image>
+      </view>
+    </view>
+  </view>
+
+
+  <view class='order' wx:if="{{orderType >= 3}}">
+    <view class='title'>验收</view>
+    <view class='li'>
+      <span>验收人</span>
+      <text>调度员</text>
+    </view>
+    <view class='li'>
+      <span>验收时间</span>
+      <text>2019-4-2 20:02</text>
+    </view>
+    <view class='li'>
+      <span>验收结果</span>
+      <view class="result {{pass?'':'active'}}">
+        <view class='result-icon'>
+          <image src="{{pass?'../images/icon17.png':'../images/icon18.png'}}"></image>
+        </view>
+        {{pass?'通过':'不通过'}}
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='mask' wx:if="{{show}}" catchtouchmove='true'>
+  <view class='popup-main'>
+    <view class='popup-box'>
+      <view class='li'>
+        <view class='raduis'></view>
+        <view class='info'>
+          已报修
+          <text>2019-4-3 20:02</text>
+        </view>
+      </view>
+      <view class='li'>
+        <view class='raduis'></view>
+        <view class='info'>
+          已接单
+          <text>2019-4-3 20:02</text>
+        </view>
+      </view>
+      <view class='li'>
+        <view class='raduis'></view>
+        <view class='info'>
+          现场维修
+          <text>2019-4-3 20:02</text>
+        </view>
+      </view>
+      <view class='li'>
+        <view class='raduis'>
+          <image src='../images/icon43.png'></image>
+        </view>
+        <view class='info'>
+          已完成
+          <text>2019-4-3 20:02</text>
+        </view>
+      </view>
+    </view>
+    <view class='close' bindtap='hide'>
+      <image src='../images/close.png'></image>
+    </view>
+  </view>
+</view>

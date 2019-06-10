@@ -1,0 +1,206 @@
+/* pages/assign/assign.wxss */
+
+page {
+  background: #f0f2f5;
+}
+
+.page {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.main-person {
+  background: #fff;
+  padding: 32rpx;
+}
+
+.main-person .title {
+  margin-bottom: 32rpx;
+  font-size: 28rpx;
+}
+
+.main-person .title image {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -2rpx;
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 6rpx;
+}
+
+.mperson {
+  display: flex;
+}
+
+.mperson-box {
+  font-size: 28rpx;
+  width: 240rpx;
+}
+
+.mperson-box image {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8rpx;
+}
+
+.main-search {
+  position: relative;
+  width: 100%;
+}
+
+.main-search i-icon {
+  position: absolute;
+  left: 12rpx;
+  top: 12rpx;
+  transform: all 0.3s;
+}
+
+.main-search input {
+  display: block;
+  background: #f0f2f5;
+  height: 66rpx;
+  line-height: 66rpx;
+  font-size: 26rpx;
+  border-radius: 6rpx;
+  padding-left: 60rpx;
+  transform: all 0.3s;
+}
+
+.active i-icon {
+  display: none;
+}
+
+.active input {
+  padding-left: 10rpx;
+}
+
+.search-list {
+  margin-top: 30rpx;
+}
+
+.search-list .li {
+  display: flex;
+}
+
+.search-list .li .img {
+  width: 120rpx;
+}
+
+.search-list .li image {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin-top: 10rpx;
+}
+
+.search-list .li .name {
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: left;
+  color: #000;
+  font-size: 28rpx;
+  width: 100%;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+.Secondary {
+  margin-top: 24rpx;
+  background: #fff;
+}
+
+.Secondary .title {
+  font-size: 28rpx;
+  color: #111;
+  padding: 31rpx;
+}
+
+.showPerson {
+  margin-left: 24rpx;
+}
+
+.showPerson image {
+  margin: 0rpx 24rpx 24rpx 0rpx;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+
+.Secondary-list {
+  border-top: 1px solid #e1e3e5;
+}
+
+.Secondary-list .li {
+  display: flex;
+  position: relative;
+  margin: 0rpx 20rpx;
+  padding: 10rpx 0rpx;
+  border-bottom: 1px solid #e1e3e5;
+}
+
+.Secondary-list .li:last-child {
+  border: 0px;
+}
+
+.Secondary-list .li .img {
+  width: 140rpx;
+}
+
+.Secondary-list .li image {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  margin-top: 10rpx;
+}
+
+.Secondary-list .li .name {
+  height: 110rpx;
+  line-height: 110rpx;
+  text-align: left;
+  color: #000;
+  font-size: 28rpx;
+  width: 100%;
+}
+
+.Secondary-list .li .select {
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  border: 1px solid #757980;
+  position: absolute;
+  right: 30rpx;
+  top: 42rpx;
+}
+
+.Secondary-list .li .selected {
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  line-height: 36rpx;
+  text-align: center;
+  border: 1px solid #5ecc22;
+  position: absolute;
+  right: 30rpx;
+  top: 42rpx;
+  background: #5ecc22;
+}
+
+.Secondary-list .li .selected i-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.getOrder {
+  background: #245098;
+  color: #fff;
+  width: 100%;
+  font-size: 30rpx;
+  text-align: center;
+  padding: 30rpx 0rpx;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+}

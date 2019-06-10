@@ -1,0 +1,53 @@
+<!--pages/selectUnit/selectUnit.wxml-->
+<navbar innerText="{{title}}" isShowBack="{{navType}}" isShowSearch="{{searchType}}">
+</navbar>
+<view class='page'>
+  <van-search value="{{ value }}" bind:change="searchChange" placeholder="请输入搜索关键词" />
+  <view class='unitList'>
+    <view class='title'>
+      <image src='../images/icon45.png'></image>
+      <text>附近的维护单元</text>
+    </view>
+
+    <view class='ordering' wx:if="{{unitListL.length == 0}}">
+      <image src='../images/icon47.png'></image>
+      <text>请打开设备位置服务，才可获得附近维护单元信息</text>
+      <view class='ordering-btn'>点击前往打开</view>
+    </view>
+    <block wx:for="{{unitListL}}" wx:key="index">
+      <view class='li' data-val='{{item}}' bindtap='select'>
+        <text>{{item}}</text>
+        <view class='tj' wx:if="{{index == 0}}">推荐</view>
+      </view>
+    </block>
+  </view>
+
+  <view class='unitList'>
+    <view class='title'>
+      <image src='../images/icon46.png'></image>
+      <text>全部维护单元</text>
+    </view>
+    <block wx:for="{{unitListL}}" wx:key="index">
+      <view class='li' data-val='{{item}}' bindtap='select'>
+        <text>{{item}}</text>
+      </view>
+    </block>
+
+    <view class='menu'>
+      <block wx:for="{{code}}" wx:key="index">
+        <text>{{item}}</text>
+      </block>
+    </view>
+  </view>
+
+  <view class='searchList' wx:if="{{searchStatus}}">
+    <view class='unitList'>
+      <view class='li' data-val='云南路和北京西路交叉口' bindtap='select'>
+        <text>云南路和北京西路交叉口</text>
+      </view>
+      <view class='li'>
+        <text>云南路和北京西路交叉口</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,34 @@
+<!--page/login/login.wxml-->
+<navbar innerText="{{title}}" isShowBack="{{navType}}" isShowSearch="{{searchType}}">
+</navbar>
+<view class='page'>
+  <image class='logo' src="../images/logo.png"></image>
+  <text class='logo-txt'>交通易运维</text>
+  <form bindsubmit="formSubmit" bindreset="formReset" class='login-form'>
+    <view class="section">
+      <view class="section__title">
+        <i-icon type="mobilephone_fill" size='23' color='#b2b2b2' />
+      </view>
+      <input name="name" value='' placeholder="请输入帐号" />
+    </view>
+    <view class="section">
+      <view class="section__title">
+        <i-icon type="lock_fill" size='23' color='#b2b2b2' />
+      </view>
+      <input password="{{inputtype}}" name="pass" value='' placeholder="请输入密码" />
+      <view class="see" bindtap='mimafocus' wx:if="{{inputtype}}">
+        <image src='../images/see.png'></image>
+      </view>
+      <view class="see" bindtap='mimafocus' wx:else>
+        <image src='../images/mima.png'></image>
+      </view>
+    </view>
+    <view class="btn-area">
+      <button formType="submit" loading="{{loading}}" type='primary'>登录</button>
+    </view>
+  </form>
+</view>
+  <view class='footer'>
+    <view class='line'></view>
+    <view class='txt'>江苏谷德信息科技有限公司</view>
+  </view>

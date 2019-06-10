@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "navbar": "/pages/navbar/navbar",
+    "i-icon": "../../dist/icon/index"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "navbar": "/pages/navbar/navbar",
+    "i-icon": "../../dist/icon/index",
+    "van-search": "../../vant/search/index"
+  }
+}

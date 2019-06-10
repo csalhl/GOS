@@ -1,0 +1,64 @@
+<!--pages/user/user.wxml-->
+<navbar innerText="{{title}}" isShowBack="{{navType}}" isShowSearch="{{searchType}}">
+</navbar>
+<view class='page'>
+  <view class='avatar'>
+    <view class='avatar-img'>
+      <image src='https://i.loli.net/2017/08/21/599a521472424.jpg'></image>
+    </view>
+    <view class='avatar-info' wx:if="{{userRole == 'admin'}}">
+      <view class='name'>
+        <text class='name'>郭京飞</text>运维工程师</view>
+      <text class='dtl'>江苏谷德运维信息技术有限公司</text>
+      <view class='wkr'>
+        <view class='level'>
+          <image src='../images/level.png'></image>高级
+        </view>
+        共接单
+        <text>365</text>
+      </view>
+    </view>
+    
+    <view class='avatar-info' wx:else>
+      <view class='name'>
+        <text class='name'>郭京飞</text>
+        </view>
+      <view class='wkr'>
+        共报修
+        <text>365</text>
+      </view>
+    </view>
+  </view>
+  <view class='user-list'>
+      <view class='box'>
+        <navigator url="/pages/notice/notice" hover-class="none">
+          <image class='box-icon' src="../images/icon7.png"></image>通知
+          <image class='box-right fr' src='../images/icon11.png'></image>
+        </navigator>
+      </view>
+      <view class='box' wx:if="{{userRole != 'person'}}">
+        <navigator url="/pages/MonthlyStatistics/MonthlyStatistics" hover-class="none">
+          <image class='box-icon' src="../images/icon8.png"></image>月度统计
+          <image class='box-right fr' src='../images/icon11.png'></image>
+        </navigator>
+      </view>
+      <view class='box'>
+        <navigator url="{{item.path}}" hover-class="none">
+          <image class='box-icon' src="../images/icon9.png"></image>服务协议
+          <image class='box-right fr' src='../images/icon11.png'></image>
+        </navigator>
+      </view>
+      <view class='box'>
+        <navigator url="/pages/Feedback/Feedback" hover-class="none">
+          <image class='box-icon' src="../images/icon10.png"></image>意见反馈
+          <image class='box-right fr' src='../images/icon11.png'></image>
+        </navigator>
+      </view>
+    <view class='login-out' bindtap="handleClick">
+      退出登录
+    </view>
+  </view>
+</view>
+<i-modal title="提示" visible="{{ visible }}" bind:ok="handleOk" bind:cancel="handleClose">
+  <view>真的要退出吗？</view>
+</i-modal>

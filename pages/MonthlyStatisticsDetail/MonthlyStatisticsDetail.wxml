@@ -1,0 +1,20 @@
+<!--pages/MonthlyStatistics/MonthlyStatistics.wxml-->
+<navbar innerText="{{title}}" isShowBack="{{navType}}" isShowSearch="{{searchType}}"></navbar>
+<view class='page'>
+  <view class='statisticsDetail'>
+    <view class='box'>
+      <view class='title'></view>
+      <view class='content'>
+        <view>在这炎热的
+          <text>7</text> 月 </view>
+        <view>您共接单
+          <text>320 </text>单 </view>
+        <view>修复的系统数为
+          <text>15</text> 个 </view>
+        <view>足迹抵达
+          <text>150</text>个维护单元 </view>
+      </view>
+    </view>
+    <image src='../images/icon25.png' class='bottom-bg'></image>
+  </view>
+</view>

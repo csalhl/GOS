@@ -1,0 +1,83 @@
+<!--pages/wroklook/worklook.wxml-->
+<navbar innerText="{{title}}" isShowBack="{{navType}}" isShowSearch="{{searchType}}"></navbar>
+<view class='page' style='padding-bottom:110rpx;top:{{pageH}}px'>
+
+  <view class='ordering' wx:if="{{allList.length == 0}}">
+    <image src='../images/icon28.png'></image>
+    <text>抱歉，没有筛选到符合条件的工单</text>
+  </view>
+  <view class='worklook'>
+    <block wx:for="{{allList}}" wx:key="index">
+      <view class='worder'>
+        <view class='title'>
+          <view class='worker-id'>
+            <image src='../images/icon12.png'></image>{{item.id}}</view>
+          <view class='type'>{{item.level}}</view>
+          <span class="fr" wx:if="{{item.status == 1}}">待接单</span>
+          <span class="fr" wx:if="{{item.status == 2}}">待到场</span>
+          <span class="fr" wx:if="{{item.status == 3}}">待提验</span>
+        </view>
+        <view class='content'>
+          {{item.detail}}
+        </view>
+        <view class='info'>
+          <view class="info-meta" wx:if="{{item.type == 1}}">3分钟后超时</view>
+          <view class="info-meta timeout" wx:if="{{item.type == 2}}">即将超时</view>
+          <view class="info-meta timeouts" wx:if="{{item.type == 3}}">
+            <image src='../images/icon13.png'></image>已超时</view>
+        </view>
+        <view class='timeouticon' wx:if="{{item.type == 3}}">
+          <image src='../images/icon14.png'></image>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<view class='sort' style='top:{{sortH}}px'>
+  <view class="sort-item {{verifyselect?'active':''}} {{showing?'showing':''}}" data-index='1' bindtap='toggle'>
+    <text>{{schedule}}</text>
+  </view>
+  <view class="sort-item {{verifyselect2?'active':''}} {{showing2?'showing':''}}" data-index='2' bindtap='toggle'>
+    <text>{{times}}</text>
+  </view>
+  <view class="sort-item {{verifyselect3?'active':''}} {{showing3?'showing':''}}" data-index='3' bindtap='toggle'>
+    <text>{{propertys}}</text>
+  </view>
+</view>
+<view class='dropdown' wx:if="{{currentIndex == 1}}" style='top:{{navH}}px'>
+  <view class='dropdown-item'>
+    <view class='sjx'></view>
+    <block wx:for="{{verify}}" wx:key="index">
+      <view class="dropdown-cell {{currentTab == index?'active':''}}" data-name='{{item.name}}' data-id='{{index}}' data-type='{{item.checked}}' bindtap='chose'>
+        <view class='dropdown-title'>{{item.name}}</view>
+        <i-icon type="right" wx:if="{{currentTab == index}}" size='20' color='#245098' />
+      </view>
+    </block>
+  </view>
+</view>
+<view class='dropdown' wx:if="{{currentIndex == 2}}" style='top:{{navH}}px'>
+  <view class='dropdown-item'>
+    <view class='sjx'></view>
+    <block wx:for="{{verify2}}" wx:key="index">
+      <view class="dropdown-cell {{currentTab == index?'active':''}}" data-name='{{item.name}}' data-id='{{index}}' data-type='{{item.checked}}' bindtap='choses'>
+        <view class='dropdown-title'>{{item.name}}</view>
+        <i-icon type="right" wx:if="{{currentTab == index}}" size='20' color='#245098' />
+      </view>
+    </block>
+  </view>
+</view>
+<view class='dropdown' wx:if="{{currentIndex == 3}}" style='top:{{navH}}px'>
+  <view class='dropdown-item'>
+    <view class='sjx'></view>
+    <view class="dropdown-cell" style='text-align:center'>
+      <block wx:for="{{verify3}}" wx:key="index">
+        <view class="tag {{item.checked?'tagon':''}}" data-name='{{item.name}}' data-id='{{index}}' bindtap='tagChange'>{{item.name}}</view>
+      </block>
+      <view class='tag-btn'>
+        <view class='tag-reset' bindtap="tagReset">重 置</view>
+        <view class='tag-ok' bindtap="tagOk">确 定</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='overlay' wx:if="{{currentIndex>0}}" bindtap='hide'></view>

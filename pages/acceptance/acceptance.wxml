@@ -1,0 +1,58 @@
+<navbar innerText="{{title}}" isShowBack="{{navType}}" isShowSearch="{{searchType}}"></navbar>
+<view class='page'>
+  <view class='step'>
+    <view class='line'></view>
+    <view class='lines' style='width:{{stepline}}%'></view>
+    <block wx:for="{{stepList}}" wx:key="index">
+      <view class="li {{item.active?'active':''}}">
+        <view class='time' wx:if="{{step == index+1 && pass}}">
+          <text style='color:red'>{{countDownNum}}</text>
+          <view class='txt'>
+            <image src="../images/icon19.png"></image>
+          </view>
+        </view>
+        <view class='time' wx:if="{{index == 1 && pass}}">
+          <text style='color:red'>{{countDownNum}}</text>
+           <view class='txt'>
+            已超时
+          </view>
+        </view>
+        <view class='time' wx:if="{{!pass}}"></view>
+        <view class='ok' wx:if="{{!item.active}}">
+          <i-icon type="right" color="#245098" />
+        </view>
+        <view class='circle'></view>
+        <text style="color:{{item.active?'':'#222'}}">{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+  <view class='order'>
+    <view class='title'>验收</view>
+    <view class='ordering' wx:if="{{step == 4}}">
+        <image src='../images/icon20.png'></image>
+        <text>正在验收中...</text>
+    </view>
+    <view class='li'>
+      <span>验收人</span>
+      <text>调度员</text>
+    </view>
+    <view class='li'>
+      <span>验收时间</span>
+      <text>2019-05-14 10:23</text>
+    </view>
+    <view class='li'>
+      <span>验收结果</span>
+      <view class="result {{pass?'':'active'}}">
+        <view class='result-icon'><image src="{{pass?'../images/icon17.png':'../images/icon18.png'}}"></image></view>
+        {{pass?'通过':'不通过'}}
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='getOrder' wx:if="{{!pass}}" bindtap='openVisible'>
+  重新提验
+</view>
+<i-modal title="提示" visible="{{ visible }}" actions="{{ actions }}" bind:click="handleClick">
+    <view>请确定维修完成后进行提验</view>
+</i-modal>

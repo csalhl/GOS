@@ -1,0 +1,19 @@
+<navbar innerText="{{title}}" isShowBack="{{navType}}" isShowSearch="{{searchType}}"></navbar>
+<view class='page'>
+  <view class='feed'>
+    <textarea bindblur="bindTextAreaBlur" style='height:200rpx' placeholder="请输入遇到的问题或者建议..." />
+    <view class='files'>
+        <block wx:for="{{imagesList}}" wx:key="index" wx:for-item="image">
+          <image src='{{image}}' data-idx="{{index}}" wx:if="imageList.length < 0" bindtap="handleImagePreview"></image>
+        </block>
+        <view class='add' bindtap="uploader">
+          <i-icon type="add" color='#b2b2b2' size='40' />
+        </view>
+      </view>
+  </view>
+  <view class='tel'>
+    <text>联系电话：</text>
+    <input type='text' placeholder='选填，便于我们跟您联系'></input>
+  </view>
+</view>
+  <view class='getOrder' bindtap='gonext'>提交</view>

@@ -1,0 +1,30 @@
+<!--pages/selectDevice/selectDevice.wxml-->
+<navbar innerText="{{title}}" isShowBack="{{navType}}" isShowSearch="{{searchType}}">
+</navbar>
+<view class='page'>
+  <van-collapse value="{{ activeNames }}" bind:change="onChange">
+    <block wx:for="{{allList}}" wx:key="index">
+      <van-collapse-item name="{{item.name}}">
+        <view slot="title" class='parent-title'>
+          {{item.name}}
+          (<text style="color:{{item.checked.length == 0?'':'#5cb234'}}">{{item.checked.length}}</text>/{{item.children.length}})
+        </view>
+        <view class='ul'>
+          <block wx:for="{{item.children}}" wx:for-item="child" wx:for-index="childindex"  wx:key="childindex">
+            <label class='li' data-index='{{index}}' data-childindex='{{childindex}}' bindtap='toggle'>
+              <text>{{child.chilname}}</text>
+              <view class="check {{child.check?'checked':''}}">
+                <van-icon name="success" color='#fff' size='32rpx' />
+              </view>
+            </label>
+          </block>
+        </view>
+      </van-collapse-item>
+    </block>
+  </van-collapse>
+
+<view class='getOrder'>
+  <view class='notes'>取消</view>
+  <view class='getOrder-btn' bindtap='gonext'>选好了</view>
+</view>
+</view>

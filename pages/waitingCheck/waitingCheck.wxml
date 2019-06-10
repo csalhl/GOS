@@ -1,0 +1,97 @@
+<navbar innerText="{{title}}" isShowBack="{{navType}}" isShowSearch="{{searchType}}">
+</navbar>
+<view class='page'>
+  <view class='step'>
+    <view class='line'></view>
+    <view class='lines' style='width:{{stepline}}%'></view>
+    <block wx:for="{{stepList}}" wx:key="index">
+      <view class="li {{item.active?'active':''}}">
+        <view class='time' wx:if="{{step == index+1}}">
+          <text style='color:red'>{{countDownNum}}</text>
+          <view class='txt'>后超时</view>
+        </view>
+        <view class='time' wx:else></view>
+        <view class='ok' wx:if="{{step != index+1 && step != index}}">
+          <i-icon type="right" color="#245098" />
+        </view>
+        <view class='circle'></view>
+        <text>{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+  <view class='form'>
+    <view class='item'>
+      <label>故障设备</label>
+      <view class='' wx:if="{{DeviceList.length != 0}}">
+        <view class='item-data'>
+          <view class='left'>
+            <text>{{DeviceList[0].name}}</text>
+            <text>{{DeviceList[0].children[0].chilname}}等{{total}}个设备</text>
+          </view>
+          <view class='right' bindtap='show'>
+            <i-icon type="prompt" color="#245098" size='26' />详情
+          </view>
+        </view>
+        <view class='item-href'>
+        <navigator url="/pages/selectDevice/selectDevice" open-type="navigate" hover-class="none">
+          <image src='../images/icon53.png'></image>
+          <text>修改</text>
+        </navigator>
+        </view>
+      </view>
+      <view class='item-href' wx:else>
+        <navigator url="/pages/selectDevice/selectDevice" open-type="navigate" hover-class="none">
+          <i-icon type="add" size="28" color="#747980" />
+          <text>选择</text>
+        </navigator>
+      </view>
+    </view>
+
+    <view class='item'>
+      <label>维修过程描述</label>
+      <textarea bindinput="bindTextAreaBlur" placeholder="请详细描述维修过程" />
+      <view class='inputnote' wx:if="{{inputnote>0}}">还可以输入{{inputnote}}字</view>
+      <view class='inputnote' wx:else>字数超出限制</view>
+    </view>
+    <view class='item'>
+      <label>维修后照片</label>
+      <view class='files'>
+        <block wx:for="{{imagesList}}" wx:key="index" wx:for-item="image">
+          <image src='{{image}}' data-idx="{{index}}" wx:if="imageList.length < 0" bindtap="handleImagePreview"></image>
+        </block>
+        <view class='add' bindtap="uploader">
+          <i-icon type="add" color='#b2b2b2' size='40' />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='getOrder'>
+  <view class='notes'>
+    <p>申请挂起</p>
+    <span>无法按时维修完</span>
+  </view>
+  <view class='getOrder-btn' bindtap='gonext'>提交</view>
+</view>
+
+<view class='mask' wx:if="{{show}}" catchtouchmove='true'>
+  <view class='popup-main'>
+    <view class='popup-box'>
+      <block wx:for="{{DeviceList}}" wx:key="index">
+        <view class='dl'>
+          <view class='dt'>
+            <image src='../images/icon54.png'></image>
+            {{item.name}}</view>
+          <view class='dd'>
+            <block wx:for="{{item.children}}" wx:for-item="child" wx:for-index="childindex" wx:key="childindex">
+              <text wx:if="{{child.check}}">{{child.chilname}}</text>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class='close' bindtap='hide'>
+      <image src='../images/close.png'></image>
+    </view>
+  </view>
+</view>

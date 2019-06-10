@@ -1,0 +1,116 @@
+/* pages/noticeDetail/noticeDetail.wxss */
+
+page {
+  background: #f0f2f5;
+}
+
+.order {
+  margin: 25rpx;
+  background: #fff;
+  border-radius: 6rpx;
+  padding: 30rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.order .title {
+  padding-left: 20rpx;
+  position: relative;
+  font-size: 34rpx;
+  padding-bottom: 30rpx;
+  font-weight: 600;
+  border-bottom: 2rpx solid #e1e3e5;
+}
+
+.order .title::after {
+  content: "";
+  width: 8rpx;
+  height: 45%;
+  position: absolute;
+  top: 12%;
+  left: 0px;
+  background: #245098;
+}
+
+.order .li {
+  font-size: 28rpx;
+  padding: 25rpx 0rpx;
+  border-bottom: 2rpx solid #e1e3e5;
+}
+
+.ordered {
+  position: absolute;
+  width: 122rpx;
+  height: 106rpx;
+  top: -10rpx;
+  right: -15rpx;
+}
+
+.ordered image {
+  width: 100%;
+  height: 100%;
+}
+
+.order .li span {
+  color: #757980;
+  font-size: 30rpx;
+}
+
+.step .li .time {
+  background: #fff;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 26rpx;
+}
+
+.step .li .time .txt {
+  display: inline-block;
+  font-size: 26rpx;
+  color: #e6492e;
+  margin-left: 10rpx;
+}
+
+.step .li .time .txt image {
+  width: 120rpx;
+  height: 48rpx;
+}
+
+.order .li text {
+  float: right;
+  font-size: 30rpx;
+  color: #1e2021;
+  font-weight: 500;
+}
+
+.order .li .dtls {
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  color: #1e2021;
+  font-weight: 500;
+}
+
+.order .li .li-img {
+  width: 100%;
+}
+
+.order .li .li-img image {
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 15rpx;
+  margin-right: 15rpx;
+}
+
+.order .li:last-child {
+  border: 0px;
+}
+
+.order-imgs {
+  margin: 25rpx;
+  padding-bottom: 40rpx;
+}
+
+.order-imgs image {
+  width: 100%;
+  height: 275rpx;
+}

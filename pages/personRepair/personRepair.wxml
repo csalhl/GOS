@@ -1,0 +1,40 @@
+<!--pages/toRepair/toRepair.wxml-->
+<navbar innerText="{{title}}" isShowBack="{{navType}}" isrepair="{{isrepair}}" isShowSearch="{{searchType}}">
+</navbar>
+<view class='page'>
+  <view class='form'>
+    <view class='item'>
+      <view class='title'>故障内容</view>
+      <view class='toRepair'>
+        <view class='toRepair-box'>
+          <textarea bindinput="bindTextAreaBlur" placeholder="请详细描述故障情况" />
+          <view class='files'>
+            <block wx:for="{{imagesList}}" wx:key="index" wx:for-item="image">
+              <image src='{{image}}' data-idx="{{index}}" wx:if="imageList.length < 0" bindtap="handleImagePreview"></image>
+            </block>
+            <view class='add' bindtap="uploader">
+              <image src='../images/icon36.png'></image>
+            </view>
+          </view>
+        </view>
+        <view class='inputnote' wx:if="{{inputnote>0}}">还可以输入{{inputnote}}字</view>
+        <view class='inputnote' wx:else>字数超出限制</view>
+
+      </view>
+    </view>
+    <view class='item' bindtap='goUnit'>
+      <label>
+        维护单元
+      </label>
+      <input type='text'value="{{unitVal}}" placeholder='请选择' disabled='disabled'></input>
+      <image src='../images/icon16.png'></image>
+    </view>
+    <view class='tel'>
+      <text>联系电话：</text>
+      <input type='text' placeholder='选填，便于我们跟您联系'></input>
+    </view>
+  </view>
+  <view class='getOrder' bindtap='toRepair'>
+    报 修
+  </view>
+</view>

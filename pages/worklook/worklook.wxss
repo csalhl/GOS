@@ -1,0 +1,300 @@
+/* pages/wroklook/worklook.wxss */
+
+page {
+  background-color: #f0f2f5;
+}
+
+.page {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.sort {
+  display: flex;
+  background: #fff;
+  position: fixed;
+  top: 0px;
+  z-index: 5;
+  width: 100%;
+  padding: 20rpx 0rpx;
+}
+
+.sort .sort-item {
+  border: 0px;
+  width: 100%;
+  margin: 0rpx 20rpx;
+  padding: 16rpx 10rpx 16rpx 0rpx;
+  font-size: 28rpx;
+  text-align: center;
+  background: #f0f2f5;
+  border-radius: 50rpx;
+  color: #494b4c;
+}
+
+.sort .sort-item text {
+  position: relative;
+}
+
+.sort .sort-item text::after {
+  position: absolute;
+  top: 2px;
+  right: -16px;
+  border: 8rpx solid;
+  border-color: transparent transparent currentColor currentColor;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  opacity: 0.4;
+  content: '';
+}
+
+.sort .active {
+  background: #d3dcea;
+  color: #1b57c5;
+}
+
+.sort .active text::after {
+  content: '';
+  opacity: 1;
+}
+
+.sort .showing {
+  background: #d3dcea;
+  color: #1b57c5;
+}
+
+.sort .showing text::after {
+  content: '';
+  opacity: 1;
+  top: 14rpx;
+  border-color: currentColor currentColor transparent transparent;
+}
+
+.worder {
+  background: #fff;
+  margin: 25rpx;
+  border-radius: 6rpx;
+  position: relative;
+}
+
+.worder .title {
+  padding: 20rpx;
+  font-size: 24rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.worder .title span {
+  color: #245098;float: right
+}
+
+.worder .title .type {
+  display: inline-block;
+  background: #f0f2f5;
+  font-size: 21rpx;
+  color: #757980;
+  border-radius: 50rpx;
+  padding: 2rpx 16rpx;
+  margin-left: 30rpx;
+}
+
+.worder .worker-id {
+  display: inline-block;
+  float: left;
+  font-size: 28rpx;
+  color: #494b4c;
+}
+
+.worder .worker-id image {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8rpx;
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.worder .content {
+  padding: 25rpx 20rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.worder .info {
+  font-size: 26rpx;
+  padding: 10rpx 25rpx 25rpx 25rpx;
+  color: #777;
+}
+
+.worder .info .info-meta {
+  display: inline-block;
+  color: #e6462e;
+}
+
+.worder .info .fr {
+  padding: 0;
+}
+
+.worder .info .timeout {
+  background: #e5492e;
+  color: #fff;
+  text-align: center;
+  padding: 0rpx 15rpx;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+}
+
+.worder .info .timeouts {
+  background: #e5492e;
+  color: #fff;
+  text-align: center;
+  padding: 0rpx 15rpx;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+}
+
+.worder .timeouticon {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+.worder .timeouticon image {
+  width: 74rpx;
+  height: 77rpx;
+}
+
+.worder .info .timeouts image {
+  width: 22rpx;
+  height: 22rpx;
+  display: inline-block;
+  margin-right: 4rpx;
+  vertical-align: middle;
+  margin-top: -5rpx;
+}
+
+.dropdown {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 300rpx;
+  z-index: 5;
+  height: 0rpx;
+}
+
+.dropdown .dropdown-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 100%;
+  background-color: #fff;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  -webkit-overflow-scrolling: touch;
+  border-top: 2rpx solid #ebedf0;
+}
+
+.dropdown .dropdown-item i-tag {
+  display: inline-block;
+}
+
+.dropdown .dropdown-item .dropdown-cell {
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  color: #323233;
+  font-size: 14px;
+  line-height: 24px;
+  background-color: #fff;
+  z-index: 999;
+}
+
+.dropdown .dropdown-item .dropdown-cell .tag {
+  display: inline-block;
+  width: 15%;
+  margin: 50rpx 10rpx;
+  border-radius: 6rpx;
+  padding: 6rpx 12rpx;
+  color: #1e2021;
+  font-size: 24rpx;
+  border: 1px solid #ebedf0;
+}
+
+.dropdown .dropdown-item .dropdown-cell .tagon {
+  color: #245098;
+  border-color: #245098;
+}
+
+.tag-btn {
+  display: flex;
+  border-top: 1px solid #e1e3e5;
+}
+
+.tag-btn view {
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 100%;
+  text-align: center;
+}
+
+.tag-btn .tag-reset {
+  color: #1e2021;
+}
+
+.tag-btn .tag-ok {
+  color: #fff;
+  background: #245098;
+}
+
+.dropdown .dropdown-item .dropdown-cell .dropdown-title {
+  color: #323233;
+  width: auto;
+  padding: 10px 15px;
+  margin: 0rpx 50rpx;
+  border-bottom: 2rpx solid #e1e3e5;
+}
+
+.dropdown .dropdown-item .active {
+  background: #f0f2f5;
+}
+
+.dropdown .dropdown-item .active .dropdown-title {
+  color: #245098;
+}
+
+.dropdown .dropdown-item .active i-icon {
+  position: absolute;
+  right: 70rpx;
+  top: 17rpx;
+}
+
+.overlay {
+  position: fixed;
+  top: 10rpx;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 4;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.ordering {
+  text-align: center;
+  position: relative;
+}
+
+.ordering image {
+  display: inline-block;width:410rpx;height: 280rpx;
+  margin-bottom: 40rpx;
+  margin-top: 160rpx;
+}
+
+.ordering text {
+  display: block;
+  font-size: 30rpx;
+  letter-spacing: 4rpx;
+}

@@ -1,0 +1,45 @@
+<navbar innerText="{{title}}" isShowBack="{{navType}}">
+</navbar>
+<view class="page" style='padding-bottom:110rpx'>
+  <van-tabs active="{{ active }}" bind:change="onChange">
+    <block wx:for="{{tabs}}" wx:key="index">
+      <van-tab title="{{item.name}} {{item.val}}">
+        <block wx:for="{{item.allList}}" wx:for-item="cell" wx:for-index="cellindex" wx:key="cellindex">
+          <view class='worder' data-id='{{cell.status}}' bindtap='goDetail'>
+            <view class='title'>
+              <view class='worker-id'>
+                <image src='../images/icon12.png'></image>{{cell.id}}</view>
+              <view class='type'>{{cell.level}}</view>
+              <span class="fr" wx:if="{{cell.status == 1}}">待接单</span>
+              <span class="fr" wx:if="{{cell.status == 2}}">待到场</span>
+              <span class="fr" wx:if="{{cell.status == 3}}">待提验</span>
+              <span class="fr" wx:if="{{cell.status == 4}}">已完成</span>
+            </view>
+            <view class='content'>
+              {{cell.detail}}
+            </view>
+            <view class='info'>
+              <view class="info-meta" wx:if="{{cell.type == 1}}">3分钟后超时</view>
+              <view class="info-meta timeout" wx:if="{{cell.type == 2}}">即将超时</view>
+              <view class="info-meta timeouts" wx:if="{{cell.type == 3}}">
+                <image src='../images/icon13.png'></image>已超时</view>
+            </view>
+            <view class='timeouticon' wx:if="{{cell.type == 3}}">
+              <image src='../images/icon14.png'></image>
+            </view>
+          </view>
+        </block>
+      </van-tab>
+    </block>
+  </van-tabs>
+
+  <view class='ordering' wx:if="{{tabs[0].allList.length == 0}}">
+    <image src='../images/icon21.png'></image>
+    <text>无与搜索匹配的工单</text>
+  </view>
+  <view class='ordering' wx:if="{{tabs[3].allList.length ==0}}">
+    <image src='../images/icon22.png'></image>
+    <text>任务都已完成，先休息会吧</text>
+  </view>
+
+</view>

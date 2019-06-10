@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "i-tabs": "../../dist/tabs/index",
+    "navbar": "/pages/navbar/navbar",
+    "van-popup": "../../vant/popup/index",
+    "i-toast": "../../dist/toast/index",
+    "van-datetime-picker": "../../vant/datetime-picker/index"
+  }
+}

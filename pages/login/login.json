@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-icon": "../../dist/icon/index",
+    "navbar": "/pages/navbar/navbar",
+    "i-input": "../../dist/input/index"
+  }
+}

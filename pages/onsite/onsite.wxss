@@ -1,0 +1,183 @@
+/* pages/waitingorder/waitingorder.wxss */
+
+page {
+  background: #f0f2f5;
+  padding-bottom: 90rpx;
+}
+
+.step {
+  background: #fff;
+  position: relative;
+  padding: 10rpx 0 20rpx 0;
+}
+
+.step .line {
+  position: absolute;
+  top: 98rpx;
+  width: 100%;
+  height: 2rpx;
+  background: #e1e3e5;
+  z-index: 0;
+}
+
+.step .ok {
+  position: absolute;
+  display: block;
+  margin: auto;
+  left: 0px;
+  right: 0px;
+  width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #245098;
+  z-index: 10;
+}
+
+.step .li {
+  display: inline-block;
+  width: 22.5%;
+  text-align: center;
+  z-index: 4;
+  position: relative;
+}
+
+.step .li .circle {
+  display: block;
+  margin: auto;
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  background: #e1e3e5;
+  border: 1px solid #b2b2b2;
+}
+
+.step .li .time {
+  background: #fff;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 26rpx;
+}
+
+.step .li .time .txt {
+  display: inline-block;
+  font-size: 26rpx;
+  color: #e6492e;
+  margin-left: 10rpx;
+}
+
+.step .li>text {
+  display: inline-block;
+  font-size: 30rpx;
+  color: #b2b2b2;
+  margin-top: 10rpx;
+}
+
+.step .active::before {
+  position: absolute;
+  top: 68rpx;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  display: inline-block;
+  content: "";
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 3;
+  border: 13rpx solid #245098;
+}
+
+.step .lines {
+  position: absolute;
+  top: 98rpx;
+  left: 0rpx;
+  z-index: 2;
+  height: 2rpx;
+  background: #245098;
+}
+
+.step .active text {
+  color: #245098;
+}
+
+.onsite {
+  margin: 25rpx;
+  background: #fff;
+  border-radius: 6rpx;
+  padding: 30rpx;
+}
+
+.onsite .title {
+  padding-left: 20rpx;
+  position: relative;
+  font-size: 34rpx;
+  padding-bottom: 30rpx;
+  font-weight: 600;
+}
+
+.getOrder {
+  background: #245098;
+  color: #fff;
+  width: 100%;
+  font-size: 30rpx;
+  text-align: center;
+  padding: 30rpx 0rpx;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+}
+
+.files .add {
+  display: inline-block;
+  background: #f0f2f5;
+  width: 190rpx;
+  height: 190rpx;
+  border-radius: 8rpx;
+  line-height: 190rpx;
+  text-align: center;margin-bottom:20rpx;vertical-align: middle
+}
+
+.files .add image {
+  width: 79rpx;
+  height: 64rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.files>image {
+  display: inline-block;
+  vertical-align: middle;
+  width: 190rpx;
+  height: 190rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  border-radius: 8rpx;
+}
+.actionList{background: #f0f2f5}
+.actionList .li{
+  padding: 32rpx 40rpx;text-align: left;border-top: 1rpx solid #e1e3e5;
+  background: #fff
+}
+.actionList .li image {
+  width: 42rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  display: inline-block;
+  vertical-align: middle;margin-right: 30rpx;margin-top: -2rpx;
+}
+
+.actionList .li text,.actionList .li .txt {
+  display: inline-block;
+  font-size: 30rpx; 
+}
+.actionList .li .txt span{
+  font-size: 24rpx;color: #747980
+}
+.actionList .li:first-child{border: 0px}
+.actionList .li:last-child{
+  border: 0;margin-top: 19rpx;
+}

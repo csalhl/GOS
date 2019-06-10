@@ -1,0 +1,58 @@
+<navbar innerText="{{title}}" isShowBack="{{navType}}">
+</navbar>
+<view class="page" style='padding-bottom:110rpx'>
+  <view class='period' bindtap='showTime'>时间段:
+    <text wx:if="{{starTime == '开始时间'}}">至今</text>
+    <text wx:else>{{starTime}} ~ {{endTime}}</text>
+  </view>
+  <view class='ordering' wx:if="{{allList.length == 0}}">
+    <image src='../images/icon32.png'></image>
+    <text>这里空空如也，马上去报修</text>
+    <navigator url="/pages/toRepair/toRepair" open-type="navigate" hover-class="none">报修</navigator>
+  </view>
+  <block wx:for="{{allList}}" wx:key="index" wx:if="{{current == current}}">
+    <view class='worder' data-id='{{item.status}}' bindtap='goDetail'>
+      <view class='title'>
+        <view class='worker-id'>
+          <image src='../images/icon12.png'></image>{{item.id}}</view>
+        <view class='type'>{{item.level}}</view>
+        <span class="fr" wx:if="{{item.status == 1}}">已报修</span>
+        <span class="fr" wx:if="{{item.status == 2}}">已接单</span>
+        <span class="fr" wx:if="{{item.status == 3}}">现场维修</span>
+        <span class="fr" wx:if="{{item.status == 4}}">已完成</span>
+      </view>
+      <view class='content'>
+        {{item.detail}}
+      </view>
+      <view class='info'>
+        <view class="info-time">{{item.date}}</view>
+        <view class='read'></view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<van-popup show="{{ show}}" position="bottom" custom-class="bottom" bind:close="popClose">
+  <view class='tab-btn'>
+    <view class='tabCancle' bindtap='tabCancle'>取消</view>
+    <view class='tabConfirm' bindtap='tabConfirm'>确定</view>
+  </view>
+  <view class='tab'>
+    <view class="tab-box {{ontime?'ontime':''}}" bindtap='tabChange'>
+      <text wx:if="{{currentDate == ''}}">{{starTime}}</text>
+      <text wx:else>{{currentDate}}</text>
+    </view>
+    <view class='tab-box'>~</view>
+    <view class="tab-box {{ontime?'':'ontime'}}" bindtap='tabChange'>
+      <text wx:if="{{currentDate2 == ''}}">{{endTime}}</text>
+      <text wx:else>{{currentDate2}}</text>
+    </view>
+  </view>
+  <view class='item' hidden="{{!ontime}}">
+    <van-datetime-picker type="date" data-type="date" confirm-button-text="{{confirmbutton}}" cancel-button-text="{{confirmbutton}}" value="{{ currentDate }}" bind:change="currentDateChange" min-date="{{ minDate }}" />
+  </view>
+  <view class='item' hidden="{{ontime}}">
+    <van-datetime-picker type="date" data-type="date" confirm-button-text="{{confirmbutton}}" cancel-button-text="{{confirmbutton}}" bind:change="currentDateChange2" value="{{ currentDate2 }}" min-date="{{ minDate }}" />
+  </view>
+</van-popup>
+<i-toast id="toast" />

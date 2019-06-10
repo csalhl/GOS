@@ -1,0 +1,16 @@
+<!--pages/ImagePreview/ImagePreview.wxml-->
+<navbar innerText="{{title}}" isShowBack="{{navType}}" isShowSearch="{{searchType}}">
+</navbar>
+<view class='page'>
+  <swiper indicator-dots="{{indicatorDots}}" duration="{{duration}}" bindchange="slideChange">
+    <block wx:for="{{imgUrls}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" bindload='imgHeight' mode="aspectFill" />
+        <view class='del' data-gid='{{index}}' bindtap='delImg'><i-icon type="trash" color='#fff' size='30'/></view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<i-modal title="提示" visible="{{ visible }}" bind:ok="handleOk" bind:cancel="handleClose">
+    <view>确定删除该照片吗？</view>
+</i-modal>
